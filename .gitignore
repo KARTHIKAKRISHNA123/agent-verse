@@ -1,0 +1,81 @@
+# ---- Secrets & environment (never commit API keys) ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+credentials.json
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# ---- Virtual environments ----
+venv/
+.venv/
+env/
+ENV/
+
+# ---- Agno / agent runtime data ----
+tmp/
+.agno/
+*.db
+*.sqlite
+*.sqlite3
+storage/
+memory/*.db
+agent_sessions/
+
+# ---- Vector stores / embeddings / caches ----
+chroma/
+chroma_db/
+.chroma/
+lancedb/
+*.faiss
+*.index
+.cache/
+
+# ---- Downloaded media (YouTube analyzer) ----
+downloads/
+*.mp4
+*.mp3
+*.webm
+*.wav
+*.m4a
+transcripts/
+
+# ---- UI (Streamlit / Gradio / Chainlit) ----
+.streamlit/secrets.toml
+.chainlit/
+.files/
+gradio_cached_examples/
+flagged/
+
+# ---- Logs ----
+*.log
+logs/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- Testing & tooling ----
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ---- IDE / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
