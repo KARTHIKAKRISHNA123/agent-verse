@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌐 agent-verse
+# agent-verse
 
 ### A multi-agent playground built with **Agno** — free-tier **Groq** + **Gemini** models, live web and finance tools, persistent memory, and a Streamlit YouTube analyzer (**TubeLens**).
 
@@ -18,38 +18,35 @@
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-- [Demo / Screenshots](#-demo--screenshots)
-- [Problem Statement](#-problem-statement)
-- [Solution Overview](#-solution-overview)
-- [Key Features](#-key-features)
-- [Architecture](#-architecture)
-- [Technology Stack](#-technology-stack--complete-breakdown)
-- [Request Lifecycle](#-request-lifecycle)
-- [Data Flow](#-data-flow)
-- [UML Diagrams](#-uml-diagrams)
-- [Data Flow Diagrams](#-data-flow-diagrams)
-- [Folder Structure](#-folder-structure)
-- [Getting Started](#-getting-started)
-- [Configuration](#-configuration)
-- [Security](#-security-considerations)
-- [Error Handling, Logging, Testing](#-error-handling-logging-and-testing)
-- [Engineering Decisions and Tradeoffs](#-engineering-decisions-and-tradeoffs)
-- [Known Limitations](#-known-limitations)
-- [Roadmap](#-future-roadmap)
-- [Troubleshooting](#-troubleshooting-guide)
-- [FAQ](#-faq)
-- [Contributing](#-contributing)
-- [Credits](#-credits-and-acknowledgements)
+- [Demo / Screenshots](#demo--screenshots)
+- [Problem Statement](#problem-statement)
+- [Solution Overview](#solution-overview)
+- [Key Features](#key-features)
+- [Architecture](#architecture)
+- [Technology Stack](#technology-stack--complete-breakdown)
+- [Request Lifecycle](#request-lifecycle)
+- [Data Flow](#data-flow)
+- [UML Diagrams](#uml-diagrams)
+- [Data Flow Diagrams](#data-flow-diagrams)
+- [Folder Structure](#folder-structure)
+- [Getting Started](#getting-started)
+- [Configuration](#configuration)
+- [Security Considerations](#security-considerations)
+- [Error Handling, Logging and Testing](#error-handling-logging-and-testing)
+- [Engineering Decisions and Tradeoffs](#engineering-decisions-and-tradeoffs)
+- [Known Limitations](#known-limitations)
+- [Troubleshooting Guide](#troubleshooting-guide)
+- [FAQ](#faq)
 
 ---
 
-## 📸 Demo / Screenshots
+## Demo / Screenshots
 
 > All screenshots below are real runs of this repository on my machine (Windows, VS Code terminal, Streamlit on `localhost:8501`).
 
-### 🎬 TubeLens — YouTube Video Analyzer (`ui.py`)
+### TubeLens — YouTube Video Analyzer (`ui.py`)
 
 | Landing page and first analysis | Structured analysis table |
 |---|---|
@@ -59,7 +56,7 @@
 |---|---|
 | ![Structured analysis](docs/images/03-tubelens-structured-analysis.png) | ![Key insights](docs/images/04-tubelens-key-insights.png) |
 
-### ✈️ Travel Agent (`agent.py`)
+### Travel Agent (`agent.py`)
 
 The agent decides on its own to call `web_search` and `search_news` before answering.
 
@@ -67,35 +64,35 @@ The agent decides on its own to call `web_search` and `search_news` before answe
 
 ![Travel agent budget itinerary](docs/images/06-travel-agent-itinerary.png)
 
-### 📈 Finance Agent (`finance_agent.py`)
+### Finance Agent (`finance_agent.py`)
 
 | Analyst consensus table | USD to INR conversion with sources |
 |---|---|
 | ![Analyst consensus](docs/images/07-finance-analyst-consensus.png) | ![INR conversion](docs/images/08-finance-inr-conversion.png) |
 
-### 🗣️ Language Team (`team.py`)
+### Language Team (`team.py`)
 
 One question is delegated to three member agents (English, Chinese, Hindi) and the answers are combined.
 
 ![Multilingual team output](docs/images/09-team-multilingual.png)
 
-### 🧠 Agent with Memory (`memory.py`)
+### Agent with Memory (`memory.py`)
 
 | Cross-turn recall and stored `UserMemory` rows | Session history follow-up |
 |---|---|
 | ![Memory recall](docs/images/10-memory-recall.png) | ![Session follow-up](docs/images/11-memory-session-followup.png) |
 
-### 🎞️ YouTube analyzer from the CLI (`youtube_analyzer.py`)
+### YouTube analyzer from the CLI (`youtube_analyzer.py`)
 
 ![CLI summary of a YouTube video](docs/images/12-youtube-cli-summary.png)
 
 ---
 
-## 🎯 Problem Statement
+## Problem Statement
 
 Learning agentic AI from tutorials usually means copying code that targets paid OpenAI models. That is a barrier for students: free-tier quotas, retired model IDs and unfamiliar framework APIs break copied code in ways that are hard to debug.
 
-## 💡 Solution Overview
+## Solution Overview
 
 **agent-verse** re-implements the "Agentic AI with Agno" tutorial series on **free** model providers (Groq and Google Gemini) and documents every real error hit along the way. Each file is a small, runnable experiment that isolates one agentic concept:
 
@@ -108,7 +105,7 @@ Learning agentic AI from tutorials usually means copying code that targets paid 
 | `youtube_analyzer.py` | An agent with the YouTube transcript tool, packaged as a reusable factory |
 | `ui.py` | **TubeLens**, a Streamlit front end around the YouTube agent |
 
-## ✨ Key Features
+## Key Features
 
 | Feature | Description | Where |
 |---|---|---|
@@ -123,7 +120,7 @@ Learning agentic AI from tutorials usually means copying code that targets paid 
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ### Overall Architecture
 
@@ -213,7 +210,7 @@ flowchart LR
 
 ---
 
-## 🧰 Technology Stack — Complete Breakdown
+## Technology Stack — Complete Breakdown
 
 > Every dependency pinned in `requirements.txt`, with how it is actually used in this repo. `uv` is the environment tool (not pinned in the manifest).
 
@@ -237,7 +234,7 @@ flowchart LR
 
 ---
 
-## 🔄 Request Lifecycle
+## Request Lifecycle
 
 ### Flow 1 — TubeLens: "Analyze Video" (a read-style request that calls tools)
 
@@ -301,7 +298,7 @@ flowchart LR
 
 ---
 
-## 🌊 Data Flow
+## Data Flow
 
 ### Component Interaction Flow
 
@@ -348,10 +345,10 @@ Tool error (no captions / no search results)
 
 ---
 
-## 📐 UML Diagrams
+## UML Diagrams
 
 <details>
-<summary>📐 UML Diagrams — Full Suite (9 Diagrams + Swimlane)</summary>
+<summary>UML Diagrams — Full Suite (9 Diagrams + Swimlane)</summary>
 
 ### UML 1 — Use Case Diagram
 
@@ -647,10 +644,10 @@ graph TB
 
 ---
 
-## 📊 Data Flow Diagrams
+## Data Flow Diagrams
 
 <details>
-<summary>📊 Data Flow Diagrams (Level 0 and Level 1)</summary>
+<summary>Data Flow Diagrams (Level 0 and Level 1)</summary>
 
 ### DFD Level 0 — Context Diagram
 
@@ -710,7 +707,7 @@ flowchart TD
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 agent-verse/
@@ -731,7 +728,7 @@ agent-verse/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -779,7 +776,7 @@ streamlit run ui.py          # TubeLens at http://localhost:8501
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 | Setting | Where | Notes |
 |---|---|---|
@@ -791,14 +788,14 @@ streamlit run ui.py          # TubeLens at http://localhost:8501
 
 ---
 
-## 🔐 Security Considerations
+## Security Considerations
 
 - API keys live only in `.env`, which is listed in `.gitignore` — never commit it.
 - The app has **no authentication**; Streamlit is meant for local use. Do not expose port 8501 publicly without adding auth.
 - Tool outputs (web pages, captions) are untrusted text fed to an LLM; prompt injection from a video transcript is possible in principle.
 - Finance output is informational only and not investment advice.
 
-## ⚡ Error Handling, Logging and Testing
+## Error Handling, Logging and Testing
 
 | Area | Current state |
 |---|---|
@@ -806,7 +803,7 @@ streamlit run ui.py          # TubeLens at http://localhost:8501
 | Logging | Agno's built-in logger; `debug_mode=True` on the finance agent for full traces |
 | Testing | No automated tests yet — verification has been manual runs (see screenshots) |
 
-## 🧭 Engineering Decisions and Tradeoffs
+## Engineering Decisions and Tradeoffs
 
 | Decision | Reason | Tradeoff |
 |---|---|---|
@@ -816,28 +813,18 @@ streamlit run ui.py          # TubeLens at http://localhost:8501
 | SQLite for memory | Zero setup, single file | Not suitable for concurrent multi-user deployment |
 | Language fallbacks `en`, `en-US`, `en-GB` | Different videos publish different English codes | Videos with only non-English or no captions still fail |
 
-## ⚠️ Known Limitations
+## Known Limitations
 
 - **Possible fabrication when search fails.** If DuckDuckGo returns "No results found", the model may produce plausible but invented analyst data. Prefer `YFinanceTools` analyst data and instruct the agent never to invent figures.
 - **Import-time side effects.** `agent.py`, `finance_agent.py` and `youtube_analyzer.py` run example calls at module level; importing them (as `ui.py` does) should be guarded with `if __name__ == "__main__":` and debug prints removed.
 - **`session_id` is defined but not passed** in `memory.py`, so chat history is not tied to a fixed session across runs (user memories still persist).
 - **Gemini agents are instantiated but not exercised** in every script.
 - **Free-tier rate limits and model churn.** Model IDs get retired and Gemini can return `503 UNAVAILABLE` under load.
-- No tests, no license file yet.
-
-## 🗺️ Future Roadmap
-
-- [ ] Guard example runs with `if __name__ == "__main__":` in every module
-- [ ] Add anti-hallucination instructions and `analyst_recommendations` to the finance agent
-- [ ] Pass a fixed `session_id` in `memory.py`
-- [ ] Provider switch (Groq or Gemini) in the TubeLens sidebar
-- [ ] Add unit tests with mocked tools
-- [ ] Knowledge base / RAG agent and a workflow example
-- [ ] Add a LICENSE file
+- No automated tests yet.
 
 ---
 
-## 🛠️ Troubleshooting Guide
+## Troubleshooting Guide
 
 | Symptom (real error from development) | Cause | Fix |
 |---|---|---|
@@ -863,7 +850,7 @@ streamlit run ui.py          # TubeLens at http://localhost:8501
 
 ---
 
-## ❓ FAQ
+## FAQ
 
 **Why Groq and Gemini instead of OpenAI?** Both have free tiers, which makes the whole project runnable without a paid account.
 
@@ -872,19 +859,3 @@ streamlit run ui.py          # TubeLens at http://localhost:8501
 **Does memory work across runs?** User memories do (stored in `tmp/agno.db`). Conversation history across runs needs a fixed `session_id`.
 
 **Where do the screenshots come from?** They are captures of my own runs; nothing in `docs/images/` is from the tutorial video.
-
----
-
-## 🤝 Contributing
-
-Issues and pull requests are welcome. Please keep secrets out of commits, run scripts locally before opening a PR, and include a short screenshot or log of the change when it affects agent behaviour.
-
-## 📄 License
-
-No license has been added yet. Until one is added, all rights are reserved by the author.
-
-## 🙏 Credits and Acknowledgements
-
-- Inspired by the **Agentic AI with Agno** tutorial by **Apna College** and the reference project [`shradha-khapra/agentic_agno`](https://github.com/shradha-khapra/agentic_agno).
-- Built on [Agno](https://docs.agno.com), [Groq](https://groq.com), [Google Gemini](https://ai.google.dev), and [Streamlit](https://streamlit.io).
-- Author: **Karthika Krishna M** ([@KARTHIKAKRISHNA123](https://github.com/KARTHIKAKRISHNA123)).
